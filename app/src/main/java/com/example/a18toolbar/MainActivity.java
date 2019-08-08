@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tbMenu = findViewById(R.id.tbMenu);
+        tbMenu = findViewById(R.id.tbMenuMain);
 
         setSupportActionBar(tbMenu);
     }
