@@ -12,16 +12,40 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Toolbar tbMenu;
+    private Toolbar tbMenuMain, tbMenuCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tbMenu = findViewById(R.id.tbMenuMain);
+        tbMenuMain = findViewById(R.id.tbMenuMain);
 
-        setSupportActionBar(tbMenu);
+        setSupportActionBar(tbMenuMain);
+
+        tbMenuCard = findViewById(R.id.tbMenuCard);
+
+        // tbMenuCard.setTitle("TIULO TRA");
+        tbMenuCard.inflateMenu(R.menu.card_menu);
+
+        tbMenuCard.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.action_card_nuevo:
+                        Toast.makeText(getApplicationContext(), "NUEVO CARD", Toast.LENGTH_SHORT).show();
+                        Log.i("ActionBar", "Nuevo Card!");
+                        return true;
+                    case R.id.action_card_buscar:
+                        Toast.makeText(getApplicationContext(), "BUSCAR CARD", Toast.LENGTH_SHORT).show();
+                        Log.i("ActionBar", "Buscar Card!");
+                        return true;
+                }
+
+                return true;
+            }
+        });
+
     }
 
     @Override
@@ -36,17 +60,17 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.action_nuevo:
-                Toast.makeText(getApplicationContext(), "NUEVO", Toast.LENGTH_SHORT).show();
-                Log.i("ActionBar", "Nuevo!");
+                Toast.makeText(getApplicationContext(), "NUEVO MAIN", Toast.LENGTH_SHORT).show();
+                Log.i("ActionBar", "Nuevo Main!");
                 return true;
             case R.id.action_buscar:
-                Toast.makeText(getApplicationContext(), "BUSCAR", Toast.LENGTH_SHORT).show();
-                Log.i("ActionBar", "Buscar!");
+                Toast.makeText(getApplicationContext(), "BUSCAR MAIN", Toast.LENGTH_SHORT).show();
+                Log.i("ActionBar", "Buscar Main!");
                 ;
                 return true;
             case R.id.action_settings:
-                Toast.makeText(getApplicationContext(), "SETTING", Toast.LENGTH_SHORT).show();
-                Log.i("ActionBar", "Settings!");
+                Toast.makeText(getApplicationContext(), "SETTING MAIN", Toast.LENGTH_SHORT).show();
+                Log.i("ActionBar", "Settings Main!");
                 ;
                 return true;
             default:

@@ -19,14 +19,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Titulo para el ToolBar"
+            android:text="Titulo del MAIN"
             android:textStyle="bold"
             android:textSize="20sp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Subtitulo para el ToolBar"
+            android:text="Subtitulo del MAIN"
             android:textSize="16sp"/>
     </LinearLayout>
 
